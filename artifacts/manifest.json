@@ -1,0 +1,303 @@
+{
+  "model_version": "real-2016-01",
+  "test_only": false,
+  "trained_at": "2026-10-04T00:04:09.484535+00:00",
+  "feature_schema": [
+    "occupancy_now",
+    "Capacity",
+    "SystemCodeNumber",
+    "forecast_hour",
+    "forecast_weekday"
+  ],
+  "dataset_sha256": "f1e28b9c697769a1a05cd20148241b60b1a73fee4907611163efc6fd9d12770a",
+  "source_url": "https://archive.ics.uci.edu/dataset/482/parking+birmingham",
+  "cleaning": {
+    "raw_rows": 35717,
+    "duplicate_rows": 216,
+    "invalid_timestamp": 0,
+    "invalid_capacity": 0,
+    "negative_occupancy": 12,
+    "over_capacity": 373,
+    "clean_rows": 35116,
+    "excluded_rows": 601
+  },
+  "split_boundaries": {
+    "train_end": "2016-11-27T08:32:19+00:00",
+    "validation_end": "2016-11-28T14:02:29+00:00"
+  },
+  "exact_target_coverage": 0.0043000341724569995,
+  "metrics": {
+    "validation": {
+      "model": {
+        "mae": 43.7220087708832,
+        "rmse": 50.09581704079066
+      },
+      "persistence": {
+        "mae": 13.583333333333334,
+        "rmse": 21.228911104120876
+      },
+      "samples": 24,
+      "clipping_frequency": 0.0,
+      "per_car_park": {
+        "BHMBCCMKT01": {
+          "samples": 1,
+          "mae": 22.16067768320869,
+          "rmse": 22.16067768320869
+        },
+        "BHMBCCPST01": {
+          "samples": 1,
+          "mae": 20.614415600076057,
+          "rmse": 20.614415600076057
+        },
+        "BHMBCCSNH01": {
+          "samples": 1,
+          "mae": 39.31577138796342,
+          "rmse": 39.31577138796342
+        },
+        "BHMBCCTHL01": {
+          "samples": 1,
+          "mae": 23.979942167224806,
+          "rmse": 23.979942167224806
+        },
+        "BHMBRCBRG01": {
+          "samples": 1,
+          "mae": 76.65471472503125,
+          "rmse": 76.65471472503125
+        },
+        "BHMBRCBRG02": {
+          "samples": 1,
+          "mae": 28.798399830357,
+          "rmse": 28.798399830357
+        },
+        "BHMBRCBRG03": {
+          "samples": 1,
+          "mae": 8.735290242553873,
+          "rmse": 8.735290242553873
+        },
+        "BHMEURBRD01": {
+          "samples": 1,
+          "mae": 50.298975400328004,
+          "rmse": 50.298975400328004
+        },
+        "BHMMBMMBX01": {
+          "samples": 1,
+          "mae": 37.98617121251084,
+          "rmse": 37.98617121251084
+        },
+        "BHMNCPHST01": {
+          "samples": 1,
+          "mae": 36.81435079343669,
+          "rmse": 36.81435079343669
+        },
+        "BHMNCPLDH01": {
+          "samples": 1,
+          "mae": 36.57546887465301,
+          "rmse": 36.57546887465301
+        },
+        "BHMNCPRAN01": {
+          "samples": 1,
+          "mae": 36.497807931219256,
+          "rmse": 36.497807931219256
+        },
+        "Broad Street": {
+          "samples": 1,
+          "mae": 58.55272845735509,
+          "rmse": 58.55272845735509
+        },
+        "Bull Ring": {
+          "samples": 1,
+          "mae": 56.99829867713311,
+          "rmse": 56.99829867713311
+        },
+        "NIA Car Parks": {
+          "samples": 1,
+          "mae": 27.18784619291631,
+          "rmse": 27.18784619291631
+        },
+        "NIA South": {
+          "samples": 1,
+          "mae": 27.153804293845297,
+          "rmse": 27.153804293845297
+        },
+        "Others-CCCPS105a": {
+          "samples": 1,
+          "mae": 43.46553167056618,
+          "rmse": 43.46553167056618
+        },
+        "Others-CCCPS119a": {
+          "samples": 1,
+          "mae": 25.18380557678779,
+          "rmse": 25.18380557678779
+        },
+        "Others-CCCPS133": {
+          "samples": 1,
+          "mae": 101.02898650125871,
+          "rmse": 101.02898650125871
+        },
+        "Others-CCCPS135a": {
+          "samples": 1,
+          "mae": 111.16309192724043,
+          "rmse": 111.16309192724043
+        },
+        "Others-CCCPS202": {
+          "samples": 1,
+          "mae": 62.76447889663336,
+          "rmse": 62.76447889663336
+        },
+        "Others-CCCPS8": {
+          "samples": 1,
+          "mae": 21.80186435806695,
+          "rmse": 21.80186435806695
+        },
+        "Others-CCCPS98": {
+          "samples": 1,
+          "mae": 38.09228023168066,
+          "rmse": 38.09228023168066
+        },
+        "Shopping": {
+          "samples": 1,
+          "mae": 57.503507869149814,
+          "rmse": 57.503507869149814
+        }
+      }
+    },
+    "test": {
+      "model": {
+        "mae": 59.13021416532736,
+        "rmse": 74.85758299212537
+      },
+      "persistence": {
+        "mae": 40.08888888888889,
+        "rmse": 61.89920121545278
+      },
+      "samples": 45,
+      "clipping_frequency": 0.08888888888888889,
+      "per_car_park": {
+        "BHMBCCMKT01": {
+          "samples": 2,
+          "mae": 35.575183080013275,
+          "rmse": 35.72905367601634
+        },
+        "BHMBCCPST01": {
+          "samples": 2,
+          "mae": 31.66172795184707,
+          "rmse": 31.711208404422006
+        },
+        "BHMBCCSNH01": {
+          "samples": 2,
+          "mae": 38.30523756571273,
+          "rmse": 38.55515786821615
+        },
+        "BHMBCCTHL01": {
+          "samples": 1,
+          "mae": 18.32571355613527,
+          "rmse": 18.32571355613527
+        },
+        "BHMBRCBRG01": {
+          "samples": 2,
+          "mae": 117.82538724769842,
+          "rmse": 118.25118268176736
+        },
+        "BHMBRCBRG02": {
+          "samples": 2,
+          "mae": 67.9910242783078,
+          "rmse": 68.04128920982811
+        },
+        "BHMBRCBRG03": {
+          "samples": 2,
+          "mae": 37.273326699742825,
+          "rmse": 37.27992718070712
+        },
+        "BHMEURBRD01": {
+          "samples": 2,
+          "mae": 46.54598892301826,
+          "rmse": 46.563333316235195
+        },
+        "BHMEURBRD02": {
+          "samples": 2,
+          "mae": 16.35104120031285,
+          "rmse": 17.783467084882915
+        },
+        "BHMMBMMBX01": {
+          "samples": 2,
+          "mae": 46.11201537083423,
+          "rmse": 46.34967180691085
+        },
+        "BHMNCPHST01": {
+          "samples": 2,
+          "mae": 36.88183461272996,
+          "rmse": 37.45615559617874
+        },
+        "Broad Street": {
+          "samples": 2,
+          "mae": 43.07221312537996,
+          "rmse": 43.13349852081011
+        },
+        "Bull Ring": {
+          "samples": 2,
+          "mae": 158.89500590906164,
+          "rmse": 158.98072568026518
+        },
+        "NIA Car Parks": {
+          "samples": 2,
+          "mae": 36.60580868900314,
+          "rmse": 36.628832354280256
+        },
+        "NIA South": {
+          "samples": 2,
+          "mae": 33.96091176024932,
+          "rmse": 33.970298008955695
+        },
+        "Others-CCCPS105a": {
+          "samples": 2,
+          "mae": 58.53468202129534,
+          "rmse": 58.799851686270024
+        },
+        "Others-CCCPS119a": {
+          "samples": 2,
+          "mae": 40.38345814962855,
+          "rmse": 40.740621914031486
+        },
+        "Others-CCCPS133": {
+          "samples": 2,
+          "mae": 213.59998587954055,
+          "rmse": 213.81971784001752
+        },
+        "Others-CCCPS135a": {
+          "samples": 2,
+          "mae": 69.22591081420478,
+          "rmse": 74.56143587405779
+        },
+        "Others-CCCPS202": {
+          "samples": 2,
+          "mae": 55.349705414183745,
+          "rmse": 55.69155206421196
+        },
+        "Others-CCCPS8": {
+          "samples": 2,
+          "mae": 32.24748364841179,
+          "rmse": 32.96805222640767
+        },
+        "Others-CCCPS98": {
+          "samples": 2,
+          "mae": 64.19611550155776,
+          "rmse": 64.1964280969233
+        },
+        "Shopping": {
+          "samples": 2,
+          "mae": 40.67291409906397,
+          "rmse": 42.08524461662393
+        }
+      }
+    }
+  },
+  "supported_date_range": [
+    "2016-10-04T07:46:28+01:00",
+    "2016-12-19T16:30:35+00:00"
+  ],
+  "package_versions": {
+    "python": "3.11.9",
+    "pandas": "2.2.3"
+  },
+  "source_commit": null
+}

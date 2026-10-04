@@ -1,0 +1,22 @@
+name: Deploy to Cloud Run
+on: workflow_dispatch
+permissions: {contents: read, id-token: write}
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: pip install -e '.[dev]'
+      - run: ruff check . && pytest -q
+      - run: python scripts/validate_release.py
+      - uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ secrets.GCP_DEPLOY_SERVICE_ACCOUNT }}
+      - uses: google-github-actions/setup-gcloud@v2
+      - run: gcloud builds submit --tag ${{ vars.GAR_LOCATION }}-docker.pkg.dev/${{ vars.GCP_PROJECT_ID }}/${{ vars.GAR_REPOSITORY }}/parkpulse:${{ github.sha }}
+      - run: gcloud run deploy ${{ vars.CLOUD_RUN_SERVICE }} --image ${{ vars.GAR_LOCATION }}-docker.pkg.dev/${{ vars.GCP_PROJECT_ID }}/${{ vars.GAR_REPOSITORY }}/parkpulse:${{ github.sha }} --region ${{ vars.GAR_LOCATION }} --project ${{ vars.GCP_PROJECT_ID }} --allow-unauthenticated
+      - run: curl --fail "$(gcloud run services describe ${{ vars.CLOUD_RUN_SERVICE }} --region ${{ vars.GAR_LOCATION }} --format='value(status.url)')/health"
