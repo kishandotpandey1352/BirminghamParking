@@ -1,7 +1,7 @@
 {
   "model_version": "real-2016-01",
   "test_only": false,
-  "trained_at": "2026-10-04T00:04:09.484535+00:00",
+  "trained_at": "2026-10-04T00:38:47.653029+00:00",
   "feature_schema": [
     "occupancy_now",
     "Capacity",
@@ -299,5 +299,5 @@
     "python": "3.11.9",
     "pandas": "2.2.3"
   },
-  "source_commit": null
+  "source_commit": "81050ad71ed3b66407d7256261e5dd4129d4eae5"
 }

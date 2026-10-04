@@ -36,6 +36,8 @@ Open `http://localhost:8000`. The app does not download data or train at startup
 
 For frontend-only development, run `cd frontend`, `npm install`, `npm run dev`, then open the Vite URL. The Vite proxy forwards `/api` to FastAPI on port 8000. The production Docker image builds the React bundle and serves it through FastAPI.
 
+The Forecast view defaults to **Historical replay — 2016**. Select a car park, then choose a date and one of that park's recorded times; unavailable dates and missing readings are never substituted. **What-if scenario — early 2017** accepts an explicit assumed occupancy for a date from 1 January to 31 March 2017 and uses the park's documented historical capacity only as an assumption. What-if results have no actual-outcome or accuracy comparison and are excluded from replay monitoring.
+
 ## Training and model versions
 
 The reproducible CLI trains the default artifact with `python scripts/train.py`. To create a separate immutable version, use `python scripts/train.py --version real-2016-02`; the artifact is written under `artifacts/versions/real-2016-02/`. The UI Model ops view calls `POST /api/models/train`, but that route is disabled by default. Enable it only for local work with `PARKPULSE_ENABLE_TRAINING=1`. It rejects duplicate version names, writes a manifest and model file, and promotes the new version through `artifacts/current.json`. Cloud deployments should train in CI, validate the manifest, tag the image with the commit SHA, and promote through Cloud Run revisions.
