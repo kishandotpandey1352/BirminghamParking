@@ -83,3 +83,4 @@ Cloud Run preparation is intentionally not executed. Configure Artifact Registry
 **18–20:** Recap artifact, gate, monitor, investigate. Learner check: identify which input is known at prediction time and why persistence is a necessary baseline.
 
 Fallback: run `python scripts/train.py` and use the JSON returned by `/api/replay/baseline`; the documented metrics are prepared real-data results, while any screenshot or saved report should be labelled as prepared historical output, not live monitoring.
+### Added Github actions
