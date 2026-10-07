@@ -5,6 +5,9 @@ from parkpulse.api import app
 
 def test_prediction_endpoints_smoke():
     with TestClient(app) as client:
+        health = client.get("/health")
+        assert health.status_code == 200
+        assert health.json()["status"] == "ok"
         options = client.get("/api/options")
         assert options.status_code == 200
         default = options.json()["default_historical"]
